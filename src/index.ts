@@ -1,21 +1,17 @@
-export interface WorkingIndicatorOptions {
-  frames?: string[];
-  intervalMs?: number;
-}
-
 export interface ThemeLike {
-  fg(token: string, text: string): string;
   bold(text: string): string;
 }
 
 export interface ExtensionUIContext {
-  setWorkingIndicator(options?: WorkingIndicatorOptions): void;
+  /** Overrides the working indicator label; called with no argument it restores the stock label. */
   setWorkingMessage(message?: string): void;
   theme: ThemeLike;
 }
 
 export interface ExtensionContext {
   ui: ExtensionUIContext;
+  /** Run mode; "tui" is the only mode with a working indicator UI. Optional for older hosts. */
+  mode?: string;
 }
 
 export interface ExtensionAPI {
