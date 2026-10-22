@@ -11,6 +11,9 @@
   "author": "ReStranger <restranger@disroot.org>",
   "type": "module",
   "main": "index.ts",
+  "scripts": {
+    "test": "node --test --experimental-strip-types test/compaction.test.ts"
+  },
   "pi": {
     "extensions": [
       "./index.ts"
